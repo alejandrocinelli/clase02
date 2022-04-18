@@ -1,16 +1,16 @@
 
 import './App.css';
-import DaisyFooter from './components/DaisyFooter';
+import DaisyCart from './components/DaisyCart';
+//import DaisyFooter from './components/DaisyFooter';
 import DaisyNavBar from './components/DaisyNavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 
 function App() {
   return (
     <div className="App">
       <DaisyNavBar/>
-      <p>Hola Mundo</p>
-      <DaisyFooter/>
-     
+     <ItemListContainer titulo="Aca va el nombre del Libro" autor="Nombre del Autor" precio="$200"/>            
     </div>
   );
 }
