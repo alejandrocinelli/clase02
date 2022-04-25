@@ -11,8 +11,7 @@ function App() {
   return (
     <div className="App">
       <DaisyNavBar/>
-      <ItemCount stock="10" initial="1"/>
-      <ItemListContainer titulo="Aca va el nombre del Libro" autor="Nombre del Autor" precio="$200"/>            
+      <ItemListContainer titulo="Venta de Peliculas" autor="La Mejore Selecion"/>            
       
     </div>
   );

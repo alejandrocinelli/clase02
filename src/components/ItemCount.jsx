@@ -26,10 +26,8 @@ const subtractHandler = () => {
 
   return (
     <div className="container px-5 py-8 mx-auto">
-      <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-2x1 font-bold title-font mb">IMG DEL LIBRO
-          </h1>
-      </div>
+
+      
       <div>
           <button className="btn  btn-xs" onClick={subtractHandler} >-</button>
           <button className="px-5">{count}</button>

@@ -4,7 +4,7 @@ const DaisyNavBar = () => {
   return (
     <div className="navbar bg-base-100">
   <div className="flex-1">
-    <a href="safasf" className="btn btn-ghost normal-case text-xl">Tienda de Libros</a>
+    <a href="safasf" className="btn btn-ghost normal-case text-xl">Tienda de VHS</a>
   </div>
  
   <div className="flex-none">
