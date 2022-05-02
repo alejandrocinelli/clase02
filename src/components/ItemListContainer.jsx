@@ -17,7 +17,7 @@ const [movies, setMovies] = useState([])
 useEffect ( ()=>{
 getMovies().then( respPromise =>{
   setMovies(respPromise);
-  console.log(movies)
+  //console.log(movies)
 })
 
 }, [] )

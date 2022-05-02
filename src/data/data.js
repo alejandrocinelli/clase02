@@ -7,7 +7,9 @@ const movies =
             "genero": "Action|Drama",
             "year": 1992,
             "price": 10,
-            "img": "https://ichef.bbci.co.uk/news/640/cpsprodpb/181CC/production/_108246789_0be02c8c-b9f3-4b79-93a1-0ee876337020.jpg"
+            "img": "https://ichef.bbci.co.uk/news/640/cpsprodpb/181CC/production/_108246789_0be02c8c-b9f3-4b79-93a1-0ee876337020.jpg",
+            "sinapsis": "La cinta relata la historia de un niño de ocho años (Culkin) que debe defender su casa de dos ladrones (Pesci y Stern) tras haber quedado solo en su casa accidentalmente en Navidad.",
+            "stock": 7
         },
         {
             "id": 2,

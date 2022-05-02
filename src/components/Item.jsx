@@ -3,7 +3,7 @@ import ItemCount from "./ItemCount"
 
 
 function Item({itemMovies}) {
-    console.log(itemMovies)
+    //console.log(itemMovies)
   return (
       
 <div className="justify-center max-w-xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

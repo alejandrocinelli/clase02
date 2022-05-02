@@ -1,11 +1,10 @@
 import React from "react"
 import {useState} from "react"
-// stock de 10 unidades
 
 function ItemCount(props) {
   
   const [stock, setStock] = useState(props.stock)
-  const [initial, setInitial] = useState(props.initial)
+  const [initial, setInitial] = useState((props.initial))
   
   const [count, setCount] = useState(1)
 
