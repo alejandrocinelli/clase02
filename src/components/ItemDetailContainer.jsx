@@ -1,34 +1,36 @@
 import { useEffect, useState } from "react"
 import moviesdb from "../data/data"
 import ItemDetail from  "./ItemDetail"
+import { useParams } from "react-router-dom";
 
- function getMovie (){
+ function getMovie (id){
    return new Promise ( (resolve, reject )=> {
    setTimeout(() => {
-     resolve(moviesdb)
-   }, 1500);
+     const movieFound = moviesdb.find( (movie)=> {
+       return parseInt(id) === movie.id
+     } )
+     resolve(movieFound)
+   }, 500);
  }  );
 }
 
 const ItemDetailContainer = () => {
 
 const [movie, setMovie] = useState([])
+const { itemid } = useParams()
 
 useEffect ( ()=>{
-getMovie().then( respPromise =>{
-  setMovie(respPromise[0]);
+getMovie(itemid).then( respPromise =>{
+  setMovie(respPromise);
 
 })
 
-}, [] )
+}, [itemid] )
 
 
   return (
       <div>
-        
-    <div className="text-2xl font-bold" >DETALLE DEL PRODUCTO</div> 
-    <div>Mas informacion</div>
-   
+           
     <ItemDetail films={movie} />
 
     </div>

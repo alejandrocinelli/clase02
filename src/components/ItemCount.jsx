@@ -1,10 +1,9 @@
 import React from "react"
 import {useState} from "react"
 
-function ItemCount(props) {
+function ItemCount({stock , initial}) {
   
-  const [stock, setStock] = useState(props.stock)
-  const [initial, setInitial] = useState((props.initial))
+
   
   const [count, setCount] = useState(1)
 
