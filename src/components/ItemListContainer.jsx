@@ -30,7 +30,7 @@ const {categoryid} = useParams();
 useEffect ( ()=>{
 getMovies(categoryid).then( respPromise =>{
   setMovies(respPromise);
-  console.log(movies)
+  
 })
 
 }, [categoryid] )

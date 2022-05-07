@@ -7,6 +7,7 @@ import DaisyNavBar from './components/DaisyNavBar';
 import { BrowserRouter,  Route, Routes} from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
+import ItemCartContainer from './components/ItemCartContainer';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route path='/' element={<ItemListContainer titulo="Venta de Peliculas" autor="La Mejor Selecion"/>  } />
         <Route path='/category/:categoryid' element={<ItemListContainer titulo="Categoria de Peliculas"/>  } />
         <Route path='/movie/:itemid' element={<ItemDetailContainer />  } />
-
+        <Route path='/cart' element={<ItemCartContainer titulo="El Carrito"/>  }> </Route>
      {/*<ItemDetailContainer/> */}
      </Routes>
      </BrowserRouter>

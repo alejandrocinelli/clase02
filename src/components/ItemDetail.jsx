@@ -1,10 +1,18 @@
 import React from "react"
 import ItemCount from "./ItemCount"
-
+import { useState } from "react"
+import { Link } from "react-router-dom"
 /*import ItemCount from "./ItemCount"*/
 /*import ItemDetailContainer from "./ItemDetailContainer"*/
 
 function ItemDetail ({films}) {
+
+  const [inCart, setinCart] = useState(false)
+
+  function onAdd(count) {
+    setinCart(true)
+    console.log("agregaste al carrito "+count)
+  }
   
   return (
       
@@ -18,12 +26,13 @@ function ItemDetail ({films}) {
     <p>Stock disponible {parseInt(films.stock) }</p>
     <p className="Text Size 6" >Precio: ${parseInt(films.price) }</p>
     <div className="card-actions justify-center">
-       <ItemCount stock={films.stock} initial={1}/> 
+    {inCart?  <Link to="/cart" className="btn btn-ghost normal-case text-l"> Ver Carrito </Link>
+    :  <ItemCount onAdd={onAdd} stock={films.stock} initial={1}/>       }
     </div>
   </div>
 </div>
 
-</div>
+</div >
 
   )
 }

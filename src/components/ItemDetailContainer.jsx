@@ -31,7 +31,7 @@ getMovie(itemid).then( respPromise =>{
   return (
       <div>
            
-    <ItemDetail films={movie} />
+    <ItemDetail  films={movie} />
 
     </div>
   )

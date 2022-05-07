@@ -1,7 +1,7 @@
 import React from "react"
 import {useState} from "react"
 
-function ItemCount({stock , initial}) {
+function ItemCount({stock , initial, onAdd}) {
   
 
   
@@ -32,7 +32,7 @@ const subtractHandler = () => {
           <button className="btn  btn-xs" onClick={addHandler}>+</button>
       </div>
       <div> 
-        <button className="btn btn-s px-5 m-3" >Agregar al Carrito</button>
+        <button className="btn btn-s px-5 m-3" onClick={()=>onAdd(count)} >Agregar al Carrito</button> {/* la array funcion dentro de onClick es para no poner onAdd() y no interprete mal.*/}
       </div>
     </div>
   )
