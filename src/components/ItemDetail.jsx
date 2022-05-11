@@ -1,17 +1,22 @@
-import React from "react"
+import React, { useContext } from "react"
 import ItemCount from "./ItemCount"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import useCartContext from "../store/CartContext"
 /*import ItemCount from "./ItemCount"*/
 /*import ItemDetailContainer from "./ItemDetailContainer"*/
 
 function ItemDetail ({films}) {
 
   const [inCart, setinCart] = useState(false)
+  const {addtoCart} = useCartContext();  
+   
 
   function onAdd(count) {
     setinCart(true)
-    console.log("agregaste al carrito "+count)
+    addtoCart(films,count)
+  
+    console.log("agregaste al carrito "+count+" mas movie "+films.titulo)
   }
   
   return (

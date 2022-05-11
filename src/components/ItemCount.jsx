@@ -2,9 +2,7 @@ import React from "react"
 import {useState} from "react"
 
 function ItemCount({stock , initial, onAdd}) {
-  
-
-  
+   
   const [count, setCount] = useState(1)
 
   const addHandler = () => {
@@ -20,7 +18,6 @@ const subtractHandler = () => {
   }
   
  }
-
 
   return (
     <div className="container px-5 py-8 mx-auto">

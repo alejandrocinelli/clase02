@@ -1,7 +1,14 @@
 import DaisyCart from "./DaisyCart"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import CartContext from "../store/CartContext"
+import useCartContext from "../store/CartContext"
 
 const DaisyNavBar = () => {
+
+  const {contexFuntion} = useCartContext();
+  contexFuntion();
+
   return (
     <div className="navbar bg-base-100">
   <div className="flex-1">
