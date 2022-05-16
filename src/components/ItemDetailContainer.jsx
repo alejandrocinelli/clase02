@@ -16,7 +16,7 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-const [movie, setMovie] = useState([])
+const [movie, setMovie] = useState()
 const { itemid } = useParams()
 
 useEffect ( ()=>{

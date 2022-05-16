@@ -23,8 +23,8 @@ const DaisyNavBar = () => {
       <li><Link to="/category/Drama">Drama</Link></li> 
       <li><Link to="/category/Terror">Terror</Link></li> 
       <li><Link to="/category/Action" >Action</Link></li>
-      <li><a href="cart"> <DaisyCart></DaisyCart></a></li>
-    </ul>
+      <li><Link to="/cart" ><DaisyCart></DaisyCart></Link></li>
+          </ul>
   </div>
 </div>
   )

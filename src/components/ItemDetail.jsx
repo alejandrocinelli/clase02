@@ -15,10 +15,14 @@ function ItemDetail ({films}) {
   function onAdd(count) {
     setinCart(true)
     addtoCart(films,count)
-  
     console.log("agregaste al carrito "+count+" mas movie "+films.titulo)
   }
   
+if (films === undefined){
+  return <h1> Loading </h1>
+ 
+}
+else {
   return (
       
 <div className="justify-center max-w-xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -39,6 +43,6 @@ function ItemDetail ({films}) {
 
 </div >
 
-  )
+  )}
 }
 export default ItemDetail

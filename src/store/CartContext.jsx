@@ -8,7 +8,7 @@ const useCartContext = () => useContext(CartContext);
 export function CartContextProvider ({children}){
 
     const [cart, setCart] = useState([])
-
+   
     const addtoCart = (item, cant) =>{
 
         const IsInCart = cart.find(p => p.id === item.id)
@@ -48,8 +48,20 @@ export function CartContextProvider ({children}){
 
     const DeleteCart = () =>{setCart([]) } 
 
+    const CantInCart = () =>{
+        let total =0
+        if (cart.length == 0){
+            return total
+        }
+        else {
+        
+       cart.forEach(item => total += item.cant)}
+    
+       return  (total)
+    }
+          
     return(
-        <CartContext.Provider value={{contexFuntion, cart, addtoCart,removeFromCart,DeleteCart}} >
+        <CartContext.Provider value={{contexFuntion, cart, addtoCart,removeFromCart,DeleteCart,CantInCart}} >
             {children}
         </CartContext.Provider>
     )
