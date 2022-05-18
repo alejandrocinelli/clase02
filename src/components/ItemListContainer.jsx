@@ -1,40 +1,29 @@
 import { useEffect, useState } from "react"
-import moviesdb from "../data/data"
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import {getAllItems as getMovies, getItemByCategory } from "../data/index"
 
- function getMovies (categoryid){
-   return new Promise ( (resolve, reject )=> {
-   setTimeout(() => {
-if(categoryid){
-  
-  const arrayFilter = moviesdb.filter( (movie)=>{
-    return movie.genero === categoryid
-    
-  } )
-  resolve(arrayFilter)
-  
-}
-else{
-  resolve(moviesdb)
-}
-   }, 200);
- }  );
-}
-
+ 
 const ItemListContainer = (props) => {
 
 const [movies, setMovies] = useState([])
 const {categoryid} = useParams();
 
 useEffect ( ()=>{
-getMovies(categoryid).then( respPromise =>{
+  if (categoryid === undefined){
+getMovies().then( respPromise =>{
   setMovies(respPromise);
   
 })
+}
+else {
+  getItemByCategory(categoryid).then((respPromise) => {
+    setMovies(respPromise)
+   
+  })
+}
 
 }, [categoryid] )
-
 
   return (
       <div>
