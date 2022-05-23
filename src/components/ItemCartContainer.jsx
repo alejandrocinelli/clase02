@@ -1,11 +1,37 @@
 import React from "react"
+import swal from 'sweetalert';
 import useCartContext from "../store/CartContext"
 import { Link } from "react-router-dom"
+import {createBuyOrder} from "../data/index"
 
 function ItemCartContainer (prop){
 
-    const {cart, DeleteCart, removeFromCart} = useCartContext();
+    const {cart, DeleteCart, removeFromCart,getTotalPrice} = useCartContext();
+ 
     
+    const handlerBuy = () =>{
+
+      const buyOrderFilter = cart.map((item) => ({
+        titulo: item.titulo,
+        price: item.price,
+        cant: item.cant,
+        id: item.id,
+      }) )
+
+      const buyOrder = {
+        buyer: {
+          name: "Alejandro",
+          phono: 1554505545,
+          email: "Comision36@coderhouse.com"
+        },
+        items: [...buyOrderFilter],
+        total: getTotalPrice()
+      }
+      createBuyOrder(buyOrder)
+      DeleteCart()
+      
+    }
+
     if(cart.length == 0 ){ 
         return (
         <> 
@@ -61,8 +87,11 @@ function ItemCartContainer (prop){
     </>
     )})
     }
-    <button className="btn btn-ghost normal-case text-xl" onClick={()=> DeleteCart()}>Vaciar Carrito </button>
+    <button className="btn btn-ghost normal-case text-xl pl-5 pr-5 mr-5" onClick={()=> DeleteCart()}>Vaciar Carrito </button>
+    <button className="btn btn-ghost normal-case text-xl pl-5 pr-5" onClick={handlerBuy} >Finalizar Compra </button>
+
     </div>
+    
     
 }
 }

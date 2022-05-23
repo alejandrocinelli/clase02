@@ -1,8 +1,10 @@
 
 import { async } from "@firebase/util";
+import React from 'react'
+import swal from 'sweetalert';
 import { data } from "autoprefixer";
 import { initializeApp } from "firebase/app";
-import {getFirestore, doc, getDic, collection, getDoc, getDocs, query, where} from 'firebase/firestore/lite' 
+import {getFirestore, doc, addDoc, collection, getDoc, getDocs, query, where, Timestamp} from 'firebase/firestore/lite' 
 
 const firebaseConfig = {
   apiKey: "AIzaSyD3M4tn4qlAS0VOih4ioVvPLFtpI8zKbl4",
@@ -55,3 +57,17 @@ export async function getItem (id) {
     }
 
 }
+
+export async function createBuyOrder (orderData){
+    const buyTimestamp= Timestamp.now()
+
+    const orderWriteDate = {
+        ...orderData, date: buyTimestamp
+    }
+    
+    const miColec = collection(firestoreDB,"buyOrders")
+    const orderDoc = await addDoc(miColec,orderWriteDate)
+    swal("Compra procesada", orderDoc.id + "...es su numero de ID!");
+    
+}
+
