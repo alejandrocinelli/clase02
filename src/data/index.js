@@ -4,15 +4,17 @@ import React from 'react'
 import swal from 'sweetalert';
 import { data } from "autoprefixer";
 import { initializeApp } from "firebase/app";
+import reportWebVitals from "../reportWebVitals";
+
 import {getFirestore, doc, addDoc, collection, getDoc, getDocs, query, where, Timestamp} from 'firebase/firestore/lite' 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD3M4tn4qlAS0VOih4ioVvPLFtpI8zKbl4",
-  authDomain: "react31160-d5e12.firebaseapp.com",
-  projectId: "react31160-d5e12",
-  storageBucket: "react31160-d5e12.appspot.com",
-  messagingSenderId: "797027020171",
-  appId: "1:797027020171:web:a7b7c9ed2ef8436aa2d38e"
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPID
 };
 
 // Initialize Firebase
@@ -71,3 +73,4 @@ export async function createBuyOrder (orderData){
     
 }
 
+reportWebVitals();
