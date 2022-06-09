@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 
 function Item({itemMovies}) {
-    //console.log(itemMovies)
+  
   return (
       
 <div className="justify-center max-w-xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -18,7 +18,7 @@ function Item({itemMovies}) {
     <p>Price: ${itemMovies.price}</p>
     <div className="card-actions justify-center">
     {/*<ItemCount stock="10" initial="1"/>*/}
-    <Link to={`/movie/${itemMovies.id}`} > <button className="btn btn-secundary">Ver mas</button></Link>
+    <Link to={`/movie/${itemMovies.id}`} > <button className="btn btn-primary m-3">Ver mas</button></Link>
     </div>
   </div>
 </div>

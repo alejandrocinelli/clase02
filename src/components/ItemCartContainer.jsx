@@ -36,7 +36,7 @@ function ItemCartContainer (prop){
         return (
         <> 
         <div className="container px-5 py-8 mx-auto">CARRITO VACIO</div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-primary normal-case text-xl">
             VOLVER A LA TIENDA</Link>
        </> )
          
@@ -44,11 +44,11 @@ function ItemCartContainer (prop){
     else {
 
     return <div className="container mx-auto"> 
-        <div className="overflow-x-auto w-full mb-5">
+        <div className="overflow-x-auto w-full mb-5 py-5">
          <table className="table w-full">
         <thead>
       <tr>
-      <th>Peliculas en Carrito</th>
+      <th><h2 className="text-xl">Peliculas en Carrito </h2></th>
       </tr>
   </thead> </table>
   <div/>
@@ -56,43 +56,26 @@ function ItemCartContainer (prop){
   
   {cart.map ( itemCart => {
         return    (
+          
             <>
-   <div className="container mx-auto mb-3" key={itemCart.id}>
-   <div className="overflow-x-auto w-full">
-   <table className="table w-full">
-   <thead>
-   <tr>
-        <td>
-          <div class="flex items-center space-x-3">
-            <div class="avatar">
-              <div class="mask mask-squircle w-12 h-12">
-                <img src={itemCart.img} alt="" />
-              </div>
-            </div> 
-            </div>
-        </td>
-        <td>{itemCart.titulo}</td>
-        <td>Precio ${itemCart.price}</td>
-        <td>Cantidad  {itemCart.cant}</td>
-        <td>Total ${itemCart.price* itemCart.cant}</td>
-        <td>
-          <button class="btn btn-ghost btn-xs" onClick={ ()=> removeFromCart(itemCart.id)}>eliminar</button>
-        </td>
-      </tr>
-      </thead> 
-      </table>
-   </div>
-   </div>
+
+<div class="grid grid-cols-5 gap-4 mt-5 bg-[#1e293b] mt-2 px-3 py-1 rounded" key={itemCart.id}>
+  <div className="avatar" ><div className=" mask mask-squircle w-12 h-12"> <img src={itemCart.img} alt="" /></div></div>
+  <div>{itemCart.titulo}</div>
+  <div>Cantidad: {itemCart.cant}</div>
+  <div>Total $ {itemCart.price* itemCart.cant}</div>
+  <button class="btn btn-ghost btn-xs" onClick={ ()=> removeFromCart(itemCart.id)}>eliminar</button>
+</div>  
  
     </>
     )})
     }
-    <button className="btn btn-ghost normal-case text-xl pl-5 pr-5 mr-5" onClick={()=> DeleteCart()}>Vaciar Carrito </button>
-    <button className="btn btn-ghost normal-case text-xl pl-5 pr-5" onClick={handlerBuy} >Finalizar Compra </button>
-
+    <div className="container mx-auto mt-5">
+    <button className="btn btn-accent normal-case text-xl pl-5 pr-5 mr-5 " onClick={()=> DeleteCart()}>Vaciar Carrito </button>
+    <button className="btn btn-primary normal-case text-xl pl-5 pr-5" onClick={handlerBuy} >Finalizar Compra </button>
     </div>
-    
-    
+    </div>
+      
 }
 }
  export default ItemCartContainer

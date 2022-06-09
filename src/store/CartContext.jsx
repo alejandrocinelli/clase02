@@ -43,7 +43,7 @@ export function CartContextProvider ({children}){
         setCart(cartFilter);
     }
     const contexFuntion = ()=>{
-        console.log("Contexto Listo")
+        
     }
 
     const DeleteCart = () =>{setCart([]) } 

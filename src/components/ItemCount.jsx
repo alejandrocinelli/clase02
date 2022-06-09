@@ -29,7 +29,7 @@ const subtractHandler = () => {
           <button className="btn  btn-xs" onClick={addHandler}>+</button>
       </div>
       <div> 
-        <button className="btn btn-s px-5 m-3" onClick={()=>onAdd(count)} >Agregar al Carrito</button> {/* la array funcion dentro de onClick es para no poner onAdd() y no interprete mal.*/}
+        <button className="btn btn-primary px-5 m-4" onClick={()=>onAdd(count)} >Agregar al Carrito</button> {/* la array funcion dentro de onClick es para no poner onAdd() y no interprete mal.*/}
       </div>
     </div>
   )
