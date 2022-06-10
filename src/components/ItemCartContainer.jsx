@@ -59,7 +59,7 @@ function ItemCartContainer (prop){
           
             <>
 
-<div class="grid grid-cols-5 gap-4 mt-5 bg-[#1e293b] mt-2 px-3 py-1 rounded" key={itemCart.id}>
+<div class="grid grid-cols-5 gap-4 mt-5 bg-[#1e293b] mt-2 px-3 py-1 rounded-lg" key={itemCart.id}>
   <div className="avatar" ><div className=" mask mask-squircle w-12 h-12"> <img src={itemCart.img} alt="" /></div></div>
   <div>{itemCart.titulo}</div>
   <div>Cantidad: {itemCart.cant}</div>
@@ -70,10 +70,22 @@ function ItemCartContainer (prop){
     </>
     )})
     }
+      <div class="grid grid-cols-5 gap-5 mt-6 bg-[#1e293b] px-4 py-4 rounded-lg">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>Total del Pedido: </div>
+      <div>${getTotalPrice()}</div>
+      </div> 
+  
     <div className="container mx-auto mt-5">
     <button className="btn btn-accent normal-case text-xl pl-5 pr-5 mr-5 " onClick={()=> DeleteCart()}>Vaciar Carrito </button>
     <button className="btn btn-primary normal-case text-xl pl-5 pr-5" onClick={handlerBuy} >Finalizar Compra </button>
     </div>
+    
+    <Link to="/" className="btn btn-ghost normal-case text-xl  pl-5 pr-5 mt-5"> 
+          Seguir Comprando</Link>
+
     </div>
       
 }
